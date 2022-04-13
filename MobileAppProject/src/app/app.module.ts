@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
+//import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
