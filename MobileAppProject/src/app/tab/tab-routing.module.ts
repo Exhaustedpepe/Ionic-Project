@@ -25,6 +25,10 @@ const routes: Routes = [
         loadChildren: () => import('../about/about.module').then(m => m.AboutPageModule)
       },
       {
+        path: 'edit',
+        loadChildren: () => import('../edit-page/edit-page.module').then(m => m.EditPagePageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/home',
         pathMatch: 'full'
