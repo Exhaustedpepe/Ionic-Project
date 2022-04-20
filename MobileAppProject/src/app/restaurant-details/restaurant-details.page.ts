@@ -32,7 +32,7 @@ export class RestaurantDetailsPage implements OnInit, ViewWillEnter {
     .subscribe(({results})=>{
       this.latitude = results[0].geometry.location.lat()
       this.longitude = results[0].geometry.location.lng()
-      console.log(this.latitude)
+     
       this.platform.ready().then(() => {
         this.createMap();
       });
@@ -49,6 +49,13 @@ export class RestaurantDetailsPage implements OnInit, ViewWillEnter {
   async ionViewWillEnter(){  
     
    
+    
+  }
+  goBack() {
+    this.router.config.forEach(route => {
+      console.log(route)
+    })
+    this.router.navigate([''])
     
   }
   

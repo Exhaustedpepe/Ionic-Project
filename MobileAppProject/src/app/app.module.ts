@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
 import { CommonModule } from '@angular/common';
-import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { IonicModule, IonicRouteStrategy, NavController } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -18,7 +18,7 @@ import { NativeGeocoder } from '@awesome-cordova-plugins/native-geocoder/ngx';
   declarations: [AppComponent, DbtestComponent],
   entryComponents: [],
   imports: [ CommonModule, BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, IonicStorageModule.forRoot()],
-  providers: [ NativeGeocoder, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [ NativeGeocoder, NavController, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
