@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { DbtestComponent } from '../dbtest/dbtest.component';
+import { MapTest } from '../maptest/maptest';
 
 import { TabPage } from './tab.page';
 

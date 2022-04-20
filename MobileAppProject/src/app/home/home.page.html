@@ -3,12 +3,28 @@
     <ion-title>home</ion-title>
   </ion-toolbar>
 </ion-header>
+<div>
+  <img src="../../assets/burger.jpg" alt="">
+</div>
 
 <ion-content>
 
-  <div id="container">
-    <strong>Ready to create an app? </strong>
-    <p>Start with uhh Ionic <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Mobile_Suit_Gundam_SEED">UI Components</a></p>
+  <div id="restoBox">
+    <div *ngFor="let restaurant of restaurantsList" style="border: 1px solid black;">
+      <p>
+        Name: {{restaurant.restaurant_name}}
+        
+      </p>
+      <p>
+        Address: {{restaurant.address}}
+      
+      </p>
+      <button [routerLink]="['/restaurant-details', restaurant.id]">
+        See Details
+      </button>
+     
+      
+    </div>
   </div>
 
 </ion-content>

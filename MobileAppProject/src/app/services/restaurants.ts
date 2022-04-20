@@ -3,5 +3,7 @@ export class Restaurant {
     restaurant_name: string;
     address: string;
     description: string;
+    rating: number;
+    tags: string[];
 
 }
