@@ -2,20 +2,25 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { DbtestComponent } from './dbtest/dbtest.component';
 
+
 const routes: Routes = [
   {
-    path: 'maptest',
-    loadChildren: () => import('./maptest/maptest.module').then( m => m.MapTestModule)
+    path: '',
+    loadChildren: () => import('./tab/tab.module').then( m => m.TabPageModule)
+  },
+  {
+    path: 'splash',
+    loadChildren: () => import('./splash/splash.module').then( m => m.SplashPageModule)
   },
   {
     path: 'dbtest',
-    component: DbtestComponent
+    loadChildren: () => import('./dbtest/dbtest.component').then( m => m.DbtestComponent)
   },
   {
-    path: '',
-    redirectTo: 'dbtest',
-    pathMatch: 'full'
+    path: 'maptest',
+    loadChildren: () => import('./maptest/maptest').then( m => m.MapTest)
   },
+
 ];
 
 @NgModule({
