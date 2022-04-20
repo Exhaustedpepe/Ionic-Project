@@ -1,15 +1,24 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>RestaurantDetails</ion-title>
+    <ion-buttons slot="start">
+      <router-outlet >
+      <ion-back-button defaultHref="/home" (click)="goBack()"></ion-back-button>
+    </router-outlet>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<div id="map" #map style="height: 50%;"></div>
-<ion-content id="detailsBox">
 
+<ion-content id="detailsBox"  >
+  <div id="map" #map style="height: 50%;"></div>
   <div>
-    <h1>{{restaurant.restaurant_name}}</h1>
+    <h1 style="text-align: center;">{{restaurant.restaurant_name}}</h1>
+    <h3>{{restaurant.description}}</h3>
+    <h3>Tags:</h3>
+    <div *ngFor="let tag of restaurant.tags">
+      <p>{{tag}}</p>
+    </div>
   </div>
-  <button [routerLink]="['home']">Go Back To HOOOOME</button>
-
+  
 </ion-content>

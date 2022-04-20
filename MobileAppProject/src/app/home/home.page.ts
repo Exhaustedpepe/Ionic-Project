@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ViewWillEnter } from '@ionic/angular';
 import { DbService } from '../services/db.service';
@@ -18,6 +18,7 @@ export class HomePage implements OnInit, ViewWillEnter {
   async ngOnInit() {
    
     await this.dbService.init()
+    
     
   }
 

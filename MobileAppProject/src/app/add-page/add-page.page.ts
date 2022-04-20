@@ -25,6 +25,8 @@ export class AddPagePage implements OnInit {
 
   onSubmit(){
     this.dbService.addRestaurant(this.addForm.value)
+    
   }
+  
 
 }
