@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DbService } from '../services/db.service';
 
 @Component({
   selector: 'app-edit-page',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditPagePage implements OnInit {
 
-  constructor() { }
+  constructor(private dbService: DbService) { }
 
   ngOnInit() {
   }
+  
 
 }

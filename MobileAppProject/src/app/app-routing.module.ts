@@ -12,14 +12,7 @@ const routes: Routes = [
     path: 'splash',
     loadChildren: () => import('./splash/splash.module').then( m => m.SplashPageModule)
   },
-  {
-    path: 'dbtest',
-    loadChildren: () => import('./dbtest/dbtest.component').then( m => m.DbtestComponent)
-  },
-  {
-    path: 'maptest',
-    loadChildren: () => import('./maptest/maptest').then( m => m.MapTest)
-  },
+  
 
 ];
 

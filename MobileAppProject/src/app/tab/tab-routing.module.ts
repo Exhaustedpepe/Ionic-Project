@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { DbtestComponent } from '../dbtest/dbtest.component';
+import { MapTest } from '../maptest/maptest';
 
 import { TabPage } from './tab.page';
 
@@ -27,6 +29,14 @@ const routes: Routes = [
       {
         path: 'edit',
         loadChildren: () => import('../edit-page/edit-page.module').then(m => m.EditPagePageModule)
+      },
+      {
+        path: 'dbtest', component: DbtestComponent
+        
+      },
+      {
+        path: 'maptest', component: MapTest
+        
       },
       {
         path: '',
