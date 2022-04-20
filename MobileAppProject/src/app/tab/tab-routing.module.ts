@@ -31,14 +31,6 @@ const routes: Routes = [
         loadChildren: () => import('../edit-page/edit-page.module').then(m => m.EditPagePageModule)
       },
       {
-        path: 'dbtest', component: DbtestComponent
-        
-      },
-      {
-        path: 'maptest', component: MapTest
-        
-      },
-      {
         path: '',
         redirectTo: '/tabs/home',
         pathMatch: 'full'
