@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ViewWillEnter } from '@ionic/angular';
 import { DbService } from '../services/db.service';
 import { Restaurant } from '../services/restaurants';
@@ -12,11 +13,12 @@ import { Restaurant } from '../services/restaurants';
 export class HomePage implements OnInit, ViewWillEnter {
 
   restaurantsList: Restaurant[] =[];
-  constructor(private dbService: DbService){}
+  constructor(private dbService: DbService, private router: Router){}
   
   async ngOnInit() {
    
     await this.dbService.init()
+    
     
   }
 

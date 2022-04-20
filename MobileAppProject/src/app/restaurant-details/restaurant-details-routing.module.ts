@@ -6,12 +6,12 @@ import { RestaurantDetailsPage } from './restaurant-details.page';
 const routes: Routes = [
   {
     path: '',
-    component: RestaurantDetailsPage
+      component: RestaurantDetailsPage
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [ RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
 export class RestaurantDetailsPageRoutingModule {}

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { RestaurantDetailsPage } from '../restaurant-details/restaurant-details.page';
 
 import { TabPage } from './tab.page';
 
@@ -10,7 +11,10 @@ const routes: Routes = [
     children: [
       {
         path: 'home',
-        loadChildren: () => import('../home/home.module').then(m => m.HomePageModule)
+        loadChildren: () => import('../home/home.module').then(m => m.HomePageModule),
+        
+        
+
       },
       {
         path: 'search',
@@ -25,17 +29,25 @@ const routes: Routes = [
         loadChildren: () => import('../add-page/add-page.module').then(m => m.AddPagePageModule)
       },
       {
+            path: 'restaurant-details/:id',
+            loadChildren: () => import('../restaurant-details/restaurant-details.module').then(m => m.RestaurantDetailsPageModule)
+      },
+    
+      
+      {
         path: '',
         redirectTo: '/tabs/home',
         pathMatch: 'full'
       }
+
     ]
   },
   {
     path: '',
     redirectTo: '/tabs/about',
     pathMatch: 'full'
-  }
+  },
+ 
 ];
 
 @NgModule({

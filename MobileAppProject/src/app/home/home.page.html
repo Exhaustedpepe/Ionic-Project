@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header  *ngIf="ionViewWillEnter">
   <ion-toolbar>
     <ion-title>home</ion-title>
   </ion-toolbar>
@@ -7,7 +7,7 @@
   <img src="../../assets/burger.jpg" alt="">
 </div>
 
-<ion-content>
+<ion-content  *ngIf="ionViewWillEnter">
 
   <div id="restoBox">
     <div *ngFor="let restaurant of restaurantsList" style="border: 1px solid black;">
@@ -19,9 +19,11 @@
         Address: {{restaurant.address}}
       
       </p>
-      <button [routerLink]="['/restaurant-details', restaurant.id]">
+      <router-outlet>
+      <ion-button [routerLink]="['../restaurant-details', restaurant.id]">
         See Details
-      </button>
+      </ion-button>
+    </router-outlet>
      
       
     </div>
