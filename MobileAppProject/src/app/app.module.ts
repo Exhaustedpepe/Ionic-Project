@@ -12,13 +12,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { DbtestComponent } from './dbtest/dbtest.component';
 import { Geolocation } from '@capacitor/geolocation';
 import { NativeGeocoder } from '@awesome-cordova-plugins/native-geocoder/ngx';
+import { FormBuilder } from '@angular/forms';
 
 
 @NgModule({
   declarations: [AppComponent, DbtestComponent],
   entryComponents: [],
   imports: [ CommonModule, BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, IonicStorageModule.forRoot()],
-  providers: [ NativeGeocoder, NavController, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [FormBuilder, NativeGeocoder, NavController, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

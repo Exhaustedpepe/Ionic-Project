@@ -59,6 +59,7 @@ export class RestaurantDetailsPage implements OnInit, ViewWillEnter {
     
   }
   
+  
  
   
   
