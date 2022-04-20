@@ -11,7 +11,11 @@ const routes: Routes = [
   {
     path: 'splash',
     loadChildren: () => import('./splash/splash.module').then( m => m.SplashPageModule)
+  },  {
+    path: 'add-page',
+    loadChildren: () => import('./add-page/add-page.module').then( m => m.AddPagePageModule)
   },
+
   
 
 ];
