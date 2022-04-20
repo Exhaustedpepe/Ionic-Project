@@ -10,14 +10,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { IonicStorageModule } from '@ionic/storage-angular';
 import { HttpClientModule } from '@angular/common/http';
 import { DbtestComponent } from './dbtest/dbtest.component';
-import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { Geolocation } from '@capacitor/geolocation';
+import { NativeGeocoder } from '@awesome-cordova-plugins/native-geocoder/ngx';
 
 
 @NgModule({
   declarations: [AppComponent, DbtestComponent],
   entryComponents: [],
   imports: [ CommonModule, BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, IonicStorageModule.forRoot()],
-  providers: [ Geolocation, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [ NativeGeocoder, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
