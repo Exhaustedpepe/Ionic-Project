@@ -4,6 +4,12 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<div id="map" #map style="height: 50%;"></div>
+<ion-content id="detailsBox">
+
+  <div>
+    <h1>{{restaurant.restaurant_name}}</h1>
+  </div>
+  <button [routerLink]="['home']">Go Back To HOOOOME</button>
 
 </ion-content>
