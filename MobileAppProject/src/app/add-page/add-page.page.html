@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add Restaurant</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-content>
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+
+      <br>
+      <div>
+        <ion-item lines="full">
+          <ion-label position="floating">Name</ion-label>
+          <ion-input type="text" formControlName="restaurant_name" required></ion-input>
+        </ion-item>
+      </div>
+      <br>
+      <div>
+        <ion-item lines="full">
+          <ion-label position="floating">Address</ion-label>
+          <ion-input type="text" formControlName="address" required></ion-input>
+        </ion-item>
+      </div>
+
+      <br>
+      <div>
+        <ion-item lines="full">
+          <ion-label position="floating">Rating</ion-label>
+          <ion-input type="number" formControlName="rating" placeholder="1-5" required></ion-input>
+        </ion-item>
+      </div>
+
+      <br>
+      <div>
+        <ion-item lines="full">
+          <ion-label position="floating">Tags</ion-label>
+          <ion-input type="text" formControlName="tags" required></ion-input>
+        </ion-item>
+      </div>
+      
+      <br>
+      <div>
+        <ion-item lines="full">
+          <ion-label position="floating">Description</ion-label>
+          <ion-textarea formControlName="description"></ion-textarea>
+        </ion-item>
+      </div>
+
+      <br>
+      <ion-button type="submit" class="button-confirm">Confirm</ion-button>
+
+    </form>
+  </ion-content>
+</ion-content>
