@@ -29,6 +29,10 @@ const routes: Routes = [
         loadChildren: () => import('../add-page/add-page.module').then(m => m.AddPagePageModule)
       },
       {
+        path: 'edit/:id',
+        loadChildren: () => import('../edit-page/edit-page.module').then(m => m.EditPagePageModule)
+      },
+      {
             path: 'restaurant-details/:id',
             loadChildren: () => import('../restaurant-details/restaurant-details.module').then(m => m.RestaurantDetailsPageModule)
       },

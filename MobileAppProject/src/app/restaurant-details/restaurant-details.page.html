@@ -14,11 +14,13 @@
   <div id="map" #map style="height: 50%;"></div>
   <div>
     <h1 style="text-align: center;">{{restaurant.restaurant_name}}</h1>
-    <h3>{{restaurant.description}}</h3>
+    <p>{{restaurant.description}}</p>
+    <p>Rating: {{restaurant.rating}}</p>
     <h3>Tags:</h3>
     <div *ngFor="let tag of restaurant.tags">
       <p>{{tag}}</p>
     </div>
+    <ion-tab-button tab = 'edit/{{restaurant.id}}' >Edit</ion-tab-button>
   </div>
   
 </ion-content>
