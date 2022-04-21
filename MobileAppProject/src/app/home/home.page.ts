@@ -1,6 +1,6 @@
-import { Component, OnChanges, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, OnDestroy, ChangeDetectionStrategy, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { ViewWillEnter } from '@ionic/angular';
+import { ViewDidEnter, ViewWillEnter, ViewWillLeave } from '@ionic/angular';
 import { DbService } from '../services/db.service';
 import { Restaurant } from '../services/restaurants';
 // import { FooterComponent } from '../footer/footer.component';
@@ -8,12 +8,15 @@ import { Restaurant } from '../services/restaurants';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
+  changeDetection: ChangeDetectionStrategy.Default,
   styleUrls: ['home.page.scss'],
 })
-export class HomePage implements OnInit, ViewWillEnter {
-
-  restaurantsList: Restaurant[] =[];
-  constructor(private dbService: DbService, private router: Router){}
+export class HomePage implements OnInit, ViewWillEnter, ViewWillLeave {
+  loaded = false;
+  restaurantsList: any[] =[];
+  constructor(private dbService: DbService, private router: Router){
+    
+  }
   
   async ngOnInit() {
    
@@ -23,9 +26,12 @@ export class HomePage implements OnInit, ViewWillEnter {
   }
 
   async ionViewWillEnter() {
-    
-    const restaurants = await this.dbService.getrestaurants()
+    const restaurants =  await this.dbService.getrestaurants()
     this.restaurantsList = restaurants
-    console.log(this.restaurantsList)
+    this.loaded = true;
+    
+  }
+  async ionViewWillLeave(){
+    this.restaurantsList = [];
   }
 }

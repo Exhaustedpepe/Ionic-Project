@@ -57,7 +57,7 @@ export class DbService {
     }
   
     async updateRestaurant(restaurant: Restaurant) {
-      let restaurantsList = await this.getrestaurants();
+      let restaurantsList = await this.getrestaurants();      
       restaurantsList[restaurantsList.findIndex(r => r.id === restaurant.id)] = restaurant;
       await this._storage?.set('restaurants', JSON.stringify(restaurantsList));
     }
