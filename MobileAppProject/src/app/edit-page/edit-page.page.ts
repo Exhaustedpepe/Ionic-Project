@@ -18,10 +18,10 @@ export class EditPagePage implements OnInit {
     private router: Router,
     private actRoute: ActivatedRoute) { 
     dbService.getRestaurantById(actRoute.snapshot.params.id).then(restaurant => {
-      console.log(actRoute.snapshot.params.id)
-      this.restaurant = this.restaurant
+     
+      this.restaurant = restaurant
       this.editForm = this.formBuilder.group({
-        id: this.restaurant.id,
+        id: [this.restaurant.id],
         restaurant_name: [this.restaurant.restaurant_name],
         address: [this.restaurant.address],
         rating: [this.restaurant.rating],
@@ -33,15 +33,16 @@ export class EditPagePage implements OnInit {
 
   async ngOnInit() {
     await this.dbService.init()
-    console.log(this.restaurant)
+    
   }
   
   onSubmit() {
-    this.dbService.updateRestaurant(this.editForm.value)
+    this.dbService.updateRestaurant({...this.editForm.value})
     this.router.navigate([''])
   }
   deleteRestaurant(id){
     this.dbService.deleteRestaurantById(id)
+    this.router.navigate([''])
   }
 
 }

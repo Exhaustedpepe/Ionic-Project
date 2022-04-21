@@ -11,7 +11,7 @@ import { IonicStorageModule } from '@ionic/storage-angular';
 import { HttpClientModule } from '@angular/common/http';
 import { DbtestComponent } from './dbtest/dbtest.component';
 import { Geolocation } from '@capacitor/geolocation';
-import { NativeGeocoder } from '@awesome-cordova-plugins/native-geocoder/ngx';
+
 import { FormBuilder } from '@angular/forms';
 
 
@@ -19,7 +19,7 @@ import { FormBuilder } from '@angular/forms';
   declarations: [AppComponent, DbtestComponent],
   entryComponents: [],
   imports: [ CommonModule, BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, IonicStorageModule.forRoot()],
-  providers: [FormBuilder, NativeGeocoder, NavController, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [FormBuilder, NavController, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

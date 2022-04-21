@@ -1,13 +1,13 @@
-<ion-header  *ngIf="ionViewWillEnter">
+<ion-header  *ngIf="loaded">
   <ion-toolbar>
     <ion-title>home</ion-title>
   </ion-toolbar>
 </ion-header>
-<div>
+<div *ngIf="loaded">
   <img src="../../assets/burger.jpg" alt="">
 </div>
 
-<ion-content  *ngIf="ionViewWillEnter">
+<ion-content  *ngIf="loaded">
 
   <div id="restoBox">
     <div *ngFor="let restaurant of restaurantsList" style="border: 1px solid black;">
